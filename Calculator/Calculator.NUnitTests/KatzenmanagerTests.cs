@@ -41,4 +41,20 @@ namespace Calculator.NUnitTests
 
             Assert.Throws<ArgumentNullException>(() => km.Speichern("C:\temp", null));
         }
+
+        [Test]
+        public void Katzenmanager_SpeichernLaden_1katze()
+        {
+            var km = new Katzenmanager();
+            var k = new Katze() { Bauchumfang = 6, Fellfarbe = "Grün", Schwanzlänge = 32 };
+            var fn = "katze.xml";
+
+            km.Speichern(fn, new[] { k });
+            var result = km.Laden(fn);
+
+            Assert.IsTrue(result.Count() == 1);
+            Assert.IsTrue(result.ElementAt(0).Fellfarbe == "Grün");
+
+        }
     }
+}
