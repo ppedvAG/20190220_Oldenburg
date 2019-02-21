@@ -27,6 +27,7 @@ namespace Calculator
             if (katzen == null)
                 throw new ArgumentNullException("katzen");
 
+
             using (var sw = new StreamWriter(path))
             {
                 var serial = new XmlSerializer(typeof(List<Katze>));

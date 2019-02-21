@@ -33,7 +33,8 @@ namespace Calculator.NUnitTests
         public void Katzenmanager_Speichern_path_invaild_throws()
         {
             var km = new Katzenmanager();
-
+            //todo katze füttern
+            //hack gibt zum mittag
             Assert.Throws<ArgumentException>(() => km.Speichern("*'*#+äü+ö+ö#äö+ü§$%&/()ljwehbflhbef", new List<Katze>()));
         }
 
@@ -61,7 +62,6 @@ namespace Calculator.NUnitTests
             Assert.IsTrue(result.ElementAt(0).Fellfarbe == "Grün");
 
         }
-
 
         [Test]
         public void Katzenmanager_SpeichernLaden_1katze_AutoFix()

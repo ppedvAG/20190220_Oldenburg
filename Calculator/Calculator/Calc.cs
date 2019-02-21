@@ -10,11 +10,14 @@ namespace Calculator
     {
         public int Sum(int a, int b)
         {
+            if (a < -100)
+                return 5;
             return checked(a + b);
         }
 
         public bool IsWeekend()
         {
+
             return DateTime.Now.DayOfWeek == DayOfWeek.Sunday ||
                    DateTime.Now.DayOfWeek == DayOfWeek.Saturday;
         }
