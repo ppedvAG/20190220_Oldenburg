@@ -36,4 +36,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 #if DEBUG
 [assembly: InternalsVisibleTo("Calculator.NUnitTests")]
+[assembly: InternalsVisibleTo("Calculator.Tests1")]
+[assembly: InternalsVisibleTo("Calculator.Explorables")]
+
 #endif
