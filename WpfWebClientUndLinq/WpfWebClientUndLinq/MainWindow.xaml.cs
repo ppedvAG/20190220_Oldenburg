@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,6 +25,14 @@ namespace WpfWebClientUndLinq
         {
             InitializeComponent();
         }
-        //https://www.googleapis.com/books/v1/volumes?q=c#
+
+        private void LoadJSON(object sender, RoutedEventArgs e)
+        {
+            using (var wc = new WebClient())
+            {
+                var json = wc.DownloadString("https://www.googleapis.com/books/v1/volumes?q=c#");
+                jsonTb.Text = json;
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="600">
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top">
-            <Button>Button</Button>
+            <Button Click="LoadJSON">Lade JSON</Button>
             <Button>Button</Button>
             <Button>Button</Button>
         </WrapPanel>
