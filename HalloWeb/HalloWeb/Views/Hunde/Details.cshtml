@@ -1,0 +1,50 @@
+﻿@model HalloWeb.Models.Hund
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hund</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnzahlFlöhe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnzahlFlöhe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nasenlänge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nasenlänge)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
