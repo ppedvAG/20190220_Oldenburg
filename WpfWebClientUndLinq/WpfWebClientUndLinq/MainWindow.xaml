@@ -7,17 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="600">
     <DockPanel>
-        <WrapPanel DockPanel.Dock="Top">
+        <WrapPanel DockPanel.Dock="Top" Margin="8">
+            <TextBox Width="60" Name="suchTb" Text="Linq"/>
             <Button Click="LoadJSON">Lade JSON</Button>
-            <Button>Button</Button>
-            <Button>Button</Button>
+            <Button Click="Sortieren">Sortieren nach Seiten</Button>
+            <Button Click="MeistenSeiten">Welches Buch hat die meisten Seiten</Button>
         </WrapPanel>
+        
         <TabControl >
             <TabItem Header="Json">
                 <TextBox Name="jsonTb" TextWrapping="Wrap"/>
             </TabItem>
-            <TabItem Header="Grid">
-                <DataGrid Name="myGrid"/>
+            <TabItem Header="Grid" IsSelected="True">
+                <DataGrid Name="myGrid" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn MaxWidth="200" Header="Title" Binding="{Binding title}"/>
+                        <DataGridTextColumn Header="SubTitle" Binding="{Binding subtitle}"/>
+                        <DataGridTextColumn Header="Pub" Binding="{Binding publisher}"/>
+                        <DataGridTextColumn Header="Pages" Binding="{Binding pageCount}"/>
+                        <DataGridTemplateColumn Header="Autoren">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ListBox ItemsSource="{Binding authors}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </TabItem>
          </TabControl>
     </DockPanel>
