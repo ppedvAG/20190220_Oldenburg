@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloEvent", "HalloEvent\HalloEvent.csproj", "{61FA940D-BDCC-49CB-BB7B-105EF1630CBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61FA940D-BDCC-49CB-BB7B-105EF1630CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FA940D-BDCC-49CB-BB7B-105EF1630CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FA940D-BDCC-49CB-BB7B-105EF1630CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FA940D-BDCC-49CB-BB7B-105EF1630CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C34D0175-6FD0-47A8-A461-C3C522E6778B}
+	EndGlobalSection
+EndGlobal

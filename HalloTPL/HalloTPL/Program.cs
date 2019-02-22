@@ -10,6 +10,7 @@ namespace HalloTPL
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            throw new ExecutionEngineException();
 
             //Parallel.Invoke(Zähle, Zähle, Zähle);
             //Parallel.For(0, 100000, i => Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId}: {i:00}"));
