@@ -1,0 +1,42 @@
+﻿<Window x:Class="HalloWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HalloWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="201" >
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        
+    <StackPanel Margin="12">
+        <Button Height="176" Content="Dings">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="YellowGreen" />
+                    <GradientStop Color="#FF6AD3" Offset="0.5"/>
+                    <GradientStop Color="#00DEFF" Offset="0.6"/>
+
+                    <GradientStop Color="SlateGray" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="Button_Click_1">
+            <StackPanel Orientation="Horizontal">
+                <Image Stretch="None" Source="user_batman.png"/>
+                <TextBlock>Batman</TextBlock>
+                <Image Stretch="None" Source="user_batman.png"/>
+
+            </StackPanel>
+
+        </Button>
+
+            <!--<DocumentViewer Name="dv" />-->
+            <local:UserControl1/>
+        <local:UserControl1/>
+
+        <local:UserControl1/>
+        <local:UserControl1/>
+    </StackPanel>
+    </ScrollViewer>
+
+</Window>

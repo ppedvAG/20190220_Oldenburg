@@ -1,0 +1,67 @@
+﻿<Window x:Class="HalloBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HalloBinding"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d" 
+        Title="MainWindow" Height="350" Width="300">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisConv"/>
+        <local:BoolToColorConverter x:Key="boolToColorConv"/>
+        <sys:Int32 x:Key="meineZahl">68</sys:Int32>
+        <Style x:Key="meinStyle" TargetType="Button">
+            <Setter Property="Background" Value="Aqua"/>
+        </Style>
+        <Style x:Key="meinStyle2" BasedOn="{StaticResource meinStyle}" TargetType="Button">
+            <Setter Property="Foreground" Value="#F1002A"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Width="60" Height="60" Fill="Aqua"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel x:Name="relkmglrek">
+        <Menu x:Name="m" DockPanel.Dock="Top">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Öffnen.."/>
+                <MenuItem Header="Lösche die Welt.."/>
+                <Separator/>
+                <MenuItem Header="Beenden"/>
+            </MenuItem>
+            <MenuItem  Header="Bearbeiten">
+                <MenuItem Header="Ausschneide"/>
+                <MenuItem Header="Kopieren"/>
+                <MenuItem Header="Einfügen"/>
+            </MenuItem>
+        </Menu>
+
+        <StatusBar DockPanel.Dock="Bottom" Height="23"  Background="#57FF00"/>
+
+        <StackPanel Margin="12" Background="Cornsilk">
+            <TextBox Margin="4" Name="tb1"/>
+            <TextBox Text="{Binding ElementName=tb1,Path=Text,UpdateSourceTrigger=PropertyChanged}" 
+                     Background="{Binding ElementName=tb1,Path=Text}" Margin="4"/>
+            <Slider Name="sl1" Maximum="200"/>
+            <TextBlock Text="{Binding ElementName=sl1,Path=Value,StringFormat=0.00}"
+                       FontSize="{Binding ElementName=sl1,Path=Value}"/>
+            <CheckBox Name="cb">Sichtbar</CheckBox>
+            <Ellipse Width="40" Height="40" Fill="IndianRed"
+                     Visibility="{Binding ElementName=cb,Path=IsChecked,Converter={StaticResource boolToVisConv}}"/>
+            <Ellipse Width="40" Height="40" Fill="{Binding ElementName=cb,Path=IsChecked,Converter={StaticResource boolToColorConv}}" 
+                     Stroke="Black" StrokeThickness="2"/>
+            <Button>Button</Button>
+            <Button Style="{StaticResource meinStyle}">Button</Button>
+
+            <Button Style="{StaticResource meinStyle2}">Button</Button>
+        </StackPanel>
+
+    </DockPanel>
+</Window>

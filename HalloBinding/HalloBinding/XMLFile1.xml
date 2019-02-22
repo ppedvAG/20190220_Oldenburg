@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dinge xmlns:sitze="http://ppedv.de/ns/schulungen/oldenburg/2019"
+        xmlns="http://ppedv.de/ns/schulungen/oldenburg/2019">
+
+  <sitze:Bank>
+    <Sitzplätze>3</Sitzplätze>
+    <Material>Holz</Material>
+  </sitze:Bank>
+  <Bank>
+    <Sitzplätze>3</Sitzplätze>
+    <Material>Holz</Material>
+  </Bank>
+  <Bank xmlns="http://ppedv.de/ns/schulungen/oldenburg/2019">
+    <Sitzplätze>3</Sitzplätze>
+    <Material>Holz</Material>
+  </Bank>
+  
+  <Bank xmlns="Gelddinger">
+    <BIC>32879832498732498</BIC>
+    <Geld>1</Geld>
+  </Bank>
+
+</Dinge>
